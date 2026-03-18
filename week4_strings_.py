@@ -1,11 +1,12 @@
 #Reverse a string
 
+#Using slicing to reverse the string
 string=input("Enter a string:")
 reversed_string=string[ ::-1]
-print("Reversed string: "+str(reversed_string))   #Using slicing to reverse the string
+
+print("Reversed string: "+str(reversed_string))   
 
 #Reversing a string using for loop
-
 reversed_loop: str=""
 for character in string:
     reversed_loop= character+reversed_loop
