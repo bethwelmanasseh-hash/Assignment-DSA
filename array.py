@@ -1,15 +1,18 @@
-#array insertion
+#array indexing
+
 arr = [1, 2, 3, 4, 5]
-def visualize_array(arr):
-    print(f"Array: {arr}")
-visualize_array(arr)
-def insert_at_position(arr, position, value):
-    if position < 0 or position > len(arr):
-        print("Invalid position")
-        return
-    arr.insert(position, value)
-    print(f"Inserted {value} at position {position}")
-    visualize_array(arr)
-insert_at_position(arr, 2, 10)  # Insert 10 at index 2
-insert_at_position(arr, 0, 0)   # Insert 0 at the beginning
-insert_at_position(arr, len(arr), 20) # Insert 20 at the end
+print(f"Array: {arr}")  #original array in dict form
+print(f"Element at index 0: {arr[0]}")  # Accessing
+print(f"Element at index 2: {arr[2]}")  # Accessing
+print(f"Element at index 4: {arr[4]}")  # Accessing
+# Negative indexing
+print(f"Element at index -1: {arr[-1]}")  # Accessing last element
+print(f"Element at index -2: {arr[-2]}")  # Accessing second-to-last element
+
+#array insertion
+arr.append(6)  # Inserting at the end
+print(f"Array after appending 6: {arr}")
+arr.insert(2, 10)  # Inserting 10 at index 2
+print(f"Array after inserting 10 at index 2: {arr}")
+
+
