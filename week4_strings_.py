@@ -6,7 +6,7 @@ print("Reversed string: "+str(reversed_string))   #Using slicing to reverse the 
 
 #Reversing a string using for loop
 
-reversed_loop=""
+reversed_loop: str=""
 for character in string:
     reversed_loop= character+reversed_loop
 
