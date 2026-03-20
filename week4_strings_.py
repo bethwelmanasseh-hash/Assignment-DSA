@@ -1,4 +1,4 @@
-#Reverse a string
+##Reverse a string
 
 #Using slicing to reverse the string
 string=input("Enter a string:")
