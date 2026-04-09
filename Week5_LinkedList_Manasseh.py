@@ -101,7 +101,7 @@ class SinglyLinkedList:
 
             #  ----Test Coverage ----- #
 if __name__ == "__main__":
-    # Creating a new linked list
+    # 1. Creating a new linked list
     linked_list = SinglyLinkedList()
     
     #checking if the linked list is empty
@@ -110,38 +110,41 @@ if __name__ == "__main__":
     print(f"Is the linked list empty? {linked_list.is_empty()}")
 
 
-    # Appending some elements to the linked list
+    # 2. Appending some elements to the linked list
     linked_list.append(10)
     linked_list.append(20)
     linked_list.append(30)
-    
+    linked_list.append(40)
+    linked_list.append(50)
     # Displaying the linked list  
-    print("Linked List after appending 10, 20, 30:")
+    print("Linked List after appending 10, 20, 30, 40, 50:")
     linked_list.display()
     
-    # Prepending an element to the linked list
+    # 3. Prepending an element to the linked list
     linked_list.prepend(5)
-    
-    # Displaying the linked list
+     # Displaying the linked list
     print("Linked List after prepending 5:")
     linked_list.display()
     
-    # Insert an element at a specific position
+    # 4. Insert an element at a specific position
     linked_list.insert_at_position(15, 2)
     # Display the linked list
     print("Linked List after inserting 15 at position 2:")
     linked_list.display()
-    # Delete an element by value
+    
+    # 5. Delete an element by value
     linked_list.delete_by_value(20)
     # Display the linked list
     print("Linked List after deleting value 20:")
     linked_list.display()
-    # Delete an element by position
+   
+    # 6. Delete an element by position
     linked_list.delete_by_position(1)
     # Display the linked list
     print("Linked List after deleting position 1:")
     linked_list.display()
-    # Search for an element
+   
+    # 7. Search for an element
     index = linked_list.search(15)
     if index != -1:
         print(f"Value 15 found at index: {index}")
