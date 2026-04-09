@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, data):
         self.data = data
-        self.next = None  # Initialize next as null
+        self.next: 'Node | None' = None  # Initialize next as null
 
 class SinglyLinkedList:
     def __init__(self):
@@ -20,9 +20,10 @@ class SinglyLinkedList:
             self.head = new_node # If the linked list is empty, set the new node as the head
         else:
             current = self.head
-            while current.next: # Traverse to the end of the linked list
+            while current and current.next: # Traverse to the end of the linked list
                 current = current.next
-            current.next = new_node # Set the next of the last node to the new node
+            if current:
+                current.next = new_node # Set the next of the last node to the new node
         self.count += 1 # Increment the count of nodes
 
     def prepend(self, data):
@@ -41,21 +42,23 @@ class SinglyLinkedList:
         new_node = Node(data)
         current = self.head # Start from the head of the linked list
         for _ in range(pos - 1):
-            current = current.next
-        new_node.next = current.next
-        current.next = new_node
-        self.count += 1
+            if current:
+                current = current.next
+        if current:
+            new_node.next = current.next
+            current.next = new_node
+            self.count += 1
 
     def delete_by_value(self, data):
         if self.is_empty():
             print("Error: Linked list is empty")
             return
-        if self.head.data == data:
+        if self.head and self.head.data == data:
             self.head = self.head.next # If the head node contains the data, set the head to the next node
             self.count -= 1 # Decrement the count of nodes
             return
         current = self.head
-        while current.next:
+        while current and current.next:
             if current.next.data == data:
                 current.next = current.next.next # Set the next of the current node to skip the node with the data
                 self.count -= 1 # Decrement the count of nodes
@@ -68,14 +71,17 @@ class SinglyLinkedList:
             print("Error: Position out of bounds")
             return
         if pos == 0:
-            self.head = self.head.next # If the position is 0, set the head to the next node
+            if self.head:
+                self.head = self.head.next # If the position is 0, set the head to the next node
             self.count -= 1 # Decrement the count of nodes
             return
         current = self.head
         for _ in range(pos - 1):
-            current = current.next
-        current.next = current.next.next # Set the next of the current node to skip the node at the position
-        self.count -= 1 # Decrement the count of nodes
+            if current:
+                current = current.next
+        if current and current.next:
+            current.next = current.next.next # Set the next of the current node to skip the node at the position
+            self.count -= 1 # Decrement the count of nodes
 
     def search(self, data):
         current = self.head # Start from the head of the linked list
