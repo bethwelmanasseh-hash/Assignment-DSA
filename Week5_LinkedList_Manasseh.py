@@ -77,7 +77,7 @@ class SinglyLinkedList:
             return
         current = self.head
         for _ in range(pos - 1):
-            if current:
+               if current:
                 current = current.next
         if current and current.next:
             current.next = current.next.next # Set the next of the current node to skip the node at the position
