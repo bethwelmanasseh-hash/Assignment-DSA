@@ -63,6 +63,8 @@ class Queue:
     def display(self):
         print(f"Queue:{self.queue}")
 
+        #_____ Execution _____
+
 Queuevalues = Queue()
 Queuevalues.enqueue(10)
 Queuevalues.enqueue(20)
@@ -73,12 +75,13 @@ Queuevalues.enqueue(60)
 
 Queuevalues.display()
 
-print("Top element: ", Queuevalues.frontelement)
-print("Remove element:", Queuevalues.dequeue)
+print("Top element: ", Queuevalues.frontelement())
+print("Remove element:", Queuevalues.dequeue())
 Queuevalues.display()
 
-
+# ____ execution _____
 #_____CLASS DEQUE _____
+
 class Deque:
     def __init__(self):
         self.deque = []
