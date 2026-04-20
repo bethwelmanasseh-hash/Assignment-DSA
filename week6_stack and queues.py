@@ -76,3 +76,50 @@ Queuevalues.display()
 print("Top element: ", Queuevalues.frontelement)
 print("Remove element:", Queuevalues.dequeue)
 Queuevalues.display()
+
+
+#_____CLASS DEQUE _____
+class Deque:
+    def __init__(self):
+        self.deque = []
+
+    def add_front(self, item):
+        self.deque.insert(0, item)
+        print(f"Added to front: {item}")
+
+    def add_rear(self, item):
+        self.deque.append(item)
+        print(f"Added to rear: {item}")
+
+    def remove_front(self):
+        if self.is_empty():
+            return "Deque is empty"
+        return self.deque.pop(0)
+
+    def remove_rear(self):
+        if self.is_empty():
+            return "Deque is empty"
+        return self.deque.pop()
+
+    def is_empty(self):
+        return len(self.deque) == 0
+
+    def display(self):
+        print(f"Deque: {self.deque}")
+
+Dequevalues = Deque()
+Dequevalues.add_front(10)
+Dequevalues.add_rear(20)
+Dequevalues.add_front(30)
+Dequevalues.add_rear(40)
+Dequevalues.add_front(50)
+Dequevalues.add_rear(60)
+
+Dequevalues.display()
+
+print("Remove from front:", Dequevalues.remove_front())
+print("Remove from rear:", Dequevalues.remove_rear())
+
+Dequevalues.display()
+
+
