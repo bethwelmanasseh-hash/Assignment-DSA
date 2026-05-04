@@ -20,3 +20,5 @@ arr.remove(3)  # Removing the first occurrence of 3
 print(f"Array after removing 3: {arr}")
 del arr[1]  # Removing element at index 1
 print(f"Array after deleting element at index 1: {arr}")
+
+
